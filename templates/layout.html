@@ -1,0 +1,140 @@
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1,width=device-width">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title> {% block title%}
+                 {% endblock%}
+
+        </title>
+    </head>
+    <body>
+<div class="wrapper"><div class="topnav">
+           <a href="{{url_for('home')}}">HomePage</a>
+           <a href="{{url_for('get_boiler')}}">Boiler_Plate</a>
+           <a href="{{url_for('logout')}}">Log Out</a>
+
+        </div>
+
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages%}
+                    {%for message in messages%}
+                       <p>{{message}}</p>
+                    {% endfor%}
+              {% endif %}
+        {% endwith %}
+        {% block body %}{% endblock%}</div>
+
+    </body>
+        <style>
+        .wrapper {
+        height: 100%;
+        background: rgb(255, 255, 255 / 50%);
+        color:white;
+        display:inline-block;
+        }
+        .topnav {
+        overflow: hidden;
+        border: 0.5px solid white;
+        border-radius: 5px;
+        width:500px;
+        }
+        .instruction{
+            display: block;
+        position: relative;
+        left: 30px;
+        top: 20px;
+        height: 250px;
+        width: 350px;
+        overflow: hidden;
+        border: 0.5px solid white;
+        border-radius: 5px;
+        text-align: center;
+        }
+
+        .input {
+          position: relative;
+        left: 76px;
+        top: 50 px;
+        width: 50%;
+        margin: 7px 0;
+        display: inline-grid;
+        border: 3px solid green;
+        box-sizing: border-box;
+        text-align:center;
+        }
+
+        .table-head {
+              position: relative;
+            left: 9px;
+            top: 50 px;
+            width: 20px;
+            padding: -1px 11px;
+            margin: -11px -10px;
+            display: table-cell;
+            border: 5px solid green;
+            box-sizing: border-box;
+            background:rbg(0 0 0 /50%);
+
+        }
+        #table-data{
+          position : relative;
+          color:brown;
+          left : 10px;
+          top: 50 px;
+          width: 30px;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: table-cell;
+          border: 1px solid green;
+          box-sizing: border-box;
+
+        }
+        .bright__view{
+          background:rbg(0 0 0 /80%);
+
+        }
+
+
+         .topnav a {
+             float: left;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+                    }
+
+        .topnav a:hover {
+             background-color: #ddd;
+             color: green;
+                }
+
+
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+                }
+
+        .label{
+            position : absolute;
+            color:white;
+            left:20px;
+            margin:20px 50px
+            font-weight: bold;
+
+        }
+        body{
+            background-image:url({{ url_for('static', filename='bookmark.jpg') }}) ;
+            background-color: #cccccc;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+</style>
+
+
+</html>

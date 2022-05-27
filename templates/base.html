@@ -1,0 +1,81 @@
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1,width=device-width">
+        <title> {% block title%}
+                 {% endblock%}
+
+        </title>
+    </head>
+    <body>
+        <div class="topnav">
+
+
+       </div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages%}
+    {%for message in messages%}
+       <p>{{message}}</p>
+    {% endfor%}
+  {% endif %}
+{% endwith %}
+ {% block body %}{% endblock%}
+
+
+        </body>
+        <style>
+    form {
+      border: 3px solid #f1f1f1;
+        }
+
+     input.form-control {
+          width: 250px;
+          padding: 12px 20px;
+          margin: 8px 0;
+          border: 5px solid green;
+          box-sizing: border-box;
+
+        }
+        
+        .form-group{
+            display:flex;
+        }
+       label{
+         color: brown;
+          left: 105px;
+          top: 45;
+          margin: 20px 50px;
+          }
+
+    .button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 11px 38px;
+    margin: 1px 0;
+    cursor: pointer;
+    width: 250px;
+    text-align: center;
+
+        }
+
+     a.btn{
+    background-color: #04AA6D;
+    color: white;
+    padding: 0px;
+    margin: 6px 40px;
+    cursor: pointer;
+    width: 200px;
+    display: block;
+    text-align: center;
+    left: 100px;
+    }
+
+        button:hover {
+          opacity: 0.8;
+        }
+
+</style>
+
+
+
+</html>

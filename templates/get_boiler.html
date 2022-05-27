@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %} Enroll Page {% endblock%}
+
+
+{% block body %}
+
+<div >
+    <form  method="POST" >
+    {{eform.hidden_tag()}}
+
+
+    <div class="input">
+      Select FrontEnd Language
+    {{ eform.frontEnd }}
+    </div>
+
+
+    <div class="input">
+        Select BackEnd Language
+    {{ eform.backEnd }}
+
+    </div>
+
+    <div class="input">
+
+    {{ eform.submit(class="button")}}
+
+    </div>
+    <div class="instruction">
+        <h2 >Instruction</h2>
+<h3 >On entering the desired FrontEnd-BackEnd language combination, Click on Get BoilerPlate button given above to start downloading the BoilerPlate.</h3><h2 >HAPPY CODING !</h2>
+
+</div>
+</form>
+</div>
+
+{% endblock %}

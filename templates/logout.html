@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Log out Page {% endblock%}
+
+
+
+{% block body %}
+
+<h1>You have been successfully logged out</h1>
+
+<form action="/login", method="get">
+
+
+<button class="btn" type="submit" >Login Again</button>
+
+
+ </form>
+{% endblock %}
